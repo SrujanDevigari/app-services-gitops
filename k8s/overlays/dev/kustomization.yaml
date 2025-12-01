@@ -6,3 +6,9 @@ namespace: default
 resources:
   - ../../base/users-service
   - ../../base/api-gateway
+
+images:
+  - name: srujan6868/users-service
+    newTag: v1
+  - name: srujan6868/api-gateway
+    newTag: v1
