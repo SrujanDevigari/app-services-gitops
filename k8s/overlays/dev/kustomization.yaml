@@ -6,6 +6,6 @@ resources:
 
 images:
   - name: srujan6868/api-gateway
-    newTag: 7db77b7
+    newTag: 1.0.0-2fd2545
   - name: srujan6868/users-service
     newTag: dev-placeholder
