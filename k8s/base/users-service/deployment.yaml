@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: users-service
-  namespace: default
   labels:
     app: users-service
 spec:
@@ -17,7 +16,7 @@ spec:
     spec:
       containers:
         - name: users-service
-          image: srujan6868/users-service
+          image: srujan6868/users-service   # ❗ NO TAG HERE
           ports:
             - containerPort: 3000
           readinessProbe:
@@ -32,3 +31,10 @@ spec:
               port: 3000
             initialDelaySeconds: 10
             periodSeconds: 20
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "128Mi"
+            limits:
+              cpu: "500m"
+              memory: "256Mi"

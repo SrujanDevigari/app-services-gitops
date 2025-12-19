@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/srujan6868/app-services-gitops.git
+    repoURL: https://github.com/SrujanDevigari/app-services-gitops.git
     targetRevision: main
     path: k8s/overlays/dev # this is for Dev
   destination:
@@ -19,6 +19,9 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
+      
+      
+      # sample
 # ---
 # apiVersion: argoproj.io/v1alpha1
 # kind: Application
