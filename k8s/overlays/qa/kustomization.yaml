@@ -1,8 +1,22 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: qa   # later, when you actually create `qa` namespace
-
 resources:
-  - ../../base/users-service
-  - ../../base/api-gateway
+  - ../../base
+
+images:
+  - name: srujan6868/api-gateway
+    newTag: "qa-placeholder"
+  - name: srujan6868/users-service
+    newTag: "qa-placeholder"
+
+
+
+# apiVersion: kustomize.config.k8s.io/v1beta1
+# kind: Kustomization
+
+# namespace: qa   # later, when you actually create `qa` namespace
+
+# resources:
+#   - ../../base/users-service
+#   - ../../base/api-gateway
