@@ -18,47 +18,48 @@ spec:
       prune: true
     syncOptions:
       - CreateNamespace=true
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: app-services-qa
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/srujan6868/app-services-gitops.git
-    targetRevision: main
-    path: k8s/overlays/qa # this is for QA
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: app-qa
-  syncPolicy:
-    automated:
-      selfHeal: true
-      prune: true
-    syncOptions:
-      - CreateNamespace=true
----
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: app-services-prod
-  namespace: argocd
-spec:
-  project: default
-  source:
-    repoURL: https://github.com/srujan6868/app-services-gitops.git
-    targetRevision: main
-    path: k8s/overlays/prod # this is for Prod
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: app-prod
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
       - ApplyOutOfSyncOnly=true
+# ---
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: app-services-qa
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/srujan6868/app-services-gitops.git
+#     targetRevision: main
+#     path: k8s/overlays/qa # this is for QA
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: app-qa
+#   syncPolicy:
+#     automated:
+#       selfHeal: true
+#       prune: true
+#     syncOptions:
+#       - CreateNamespace=true
+# ---
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: app-services-prod
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/srujan6868/app-services-gitops.git
+#     targetRevision: main
+#     path: k8s/overlays/prod # this is for Prod
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: app-prod
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - CreateNamespace=true
+#       - ApplyOutOfSyncOnly=true
   
